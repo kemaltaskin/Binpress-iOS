@@ -1,0 +1,3 @@
+[submodule "Binpress/Vendor/MBProgressHUD"]
+	path = Binpress/Vendor/MBProgressHUD
+	url = https://github.com/jdg/MBProgressHUD.git
