@@ -35,7 +35,12 @@
     if(self) {
         self.componentName = [aDecoder decodeObjectForKey:@"componentName"];
         self.componentID = [aDecoder decodeIntegerForKey:@"componentID"];
-        _sales = [[aDecoder decodeObjectForKey:@"sales"] copy];
+        id sales = [aDecoder decodeObjectForKey:@"sales"];
+        if(sales) {
+            _sales = [[NSMutableDictionary alloc] initWithDictionary:sales];
+        } else {
+            _sales = [[NSMutableDictionary alloc] init];
+        }
     }
     
     return self;

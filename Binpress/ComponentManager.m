@@ -54,6 +54,7 @@ NSString * const ComponentManagerLoadFailedNotification = @"ComponentManagerLoad
         [_dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:sszzzz"];
         
         _readableDateFormatter = [[NSDateFormatter alloc] init];
+        [_readableDateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
         [_readableDateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
         
         _requestManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://www.binpress.com/api"]];
